@@ -1,5 +1,25 @@
 # 🚀 Mad City Auto Rob !
 
+## How to Use
+
+1.  **Copy the Script:** Copy the entire script code provided below.
+    ```lua
+    getgenv().serverHopType = "MostEmptyServer" -- Server hop type (MostEmptyServer or RandomServer)
+    getgenv().robBigHeist = true             -- Enable/disable big heists
+    getgenv().robMiniRobberies = true        -- Enable/disable mini-robberies
+    getgenv().Bank = true                    -- Enable/disable Bank robbery
+    getgenv().Casino = true                  -- Enable/disable Casino robbery
+    getgenv().Club = true                    -- Enable/disable Club robbery
+    getgenv().Jewel = true                   -- Enable/disable Jewelry Store robbery
+    getgenv().Mall = true                    -- Enable/disable Mall robbery
+    getgenv().Pyramid = true                 -- Enable/disable Pyramid robbery
+    getgenv().Metro = true                   -- Enable/disable Metro (train) robbery
+
+    loadstring(game:HttpGet("[https://raw.githubusercontent.com/ScuIp/MadCityAutoRob-C1SX/refs/heads/main/Source.lua](https://raw.githubusercontent.com/ScuIp/MadCityAutoRob-C1SX/refs/heads/main/Source.lua)"))()
+    ```
+2.  **Execute in Game:** Paste the copied script into your favorite Lua executor and run it while in the Mad City game.
+
+
 ## ✨ Features
 
 AUTO BIG HEISTS, AUTO MINI HEISTS
