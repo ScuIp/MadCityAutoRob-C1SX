@@ -17,7 +17,6 @@
 
     loadstring(game:HttpGet("[https://raw.githubusercontent.com/ScuIp/MadCityAutoRob-C1SX/refs/heads/main/Source.lua](https://raw.githubusercontent.com/ScuIp/MadCityAutoRob-C1SX/refs/heads/main/Source.lua)"))()
     ```
-2.  **Execute in Game:** Paste the copied script into your favorite Lua executor and run it while in the Mad City game.
 
 
 ## ✨ Features
