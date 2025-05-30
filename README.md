@@ -1,7 +1,5 @@
 # 🚀 Mad City Auto Rob !
 
-Welcome to [Mad City Auto Rob]!
-
 ## ✨ Features
 
 AUTO BIG HEISTS, AUTO MINI HEISTS
