@@ -525,38 +525,38 @@ local function RobClub()
         local TouchStart = Workspace.Club.TouchStart
         ChooseTeleport(TouchStart)
         task.wait(1)
-
-        -- Fonction pour trouver et activer le KeyPad de piratage.
-        local function getHackKeyPad(): Instance
-            local hackKeyPad = Workspace.ObjectSelection.HackKeyPad:FindFirstChild("HackKeyPad")
-            if hackKeyPad and not hackKeyPad:FindFirstChild("NoHack") then return hackKeyPad end
-            return nil
-        end
-
-        local function ActivateHackKeyPad()
-            pcall(function()
-                repeat
-                    local hackKeyPad = getHackKeyPad()
-                    if hackKeyPad then
-                        ChooseTeleport(hackKeyPad)
-                        local hackKeyPadEvent = getevent(hackKeyPad)
-                        if hackKeyPadEvent then
-                            for i = 1, 5 do hackKeyPadEvent:FireServer() end
-                            task.wait(WAIT_AFTER_EVENT)
-                        else
-                            warn(string.format("ActivateHackKeyPad: RemoteEvent non trouvé pour le KeyPad '%s'.", hackKeyPad and hackKeyPad.Name or "nil"))
-                            break
-                        end
-                    else
-                        task.wait(0.5)
-                    end
-                    ClubStatus = CheckHeistStatus("Club")
-                    if ClubStatus.Locked then break end
-                until getHackKeyPad() == nil or ClubStatus.Locked
-            end)
-        end
-        ActivateHackKeyPad()
     end
+
+    -- Fonction pour trouver et activer le KeyPad de piratage.
+    local function getHackKeyPad(): Instance
+        local hackKeyPad = Workspace.ObjectSelection.HackKeyPad:FindFirstChild("HackKeyPad")
+        if hackKeyPad and not hackKeyPad:FindFirstChild("NoHack") then return hackKeyPad end
+        return nil
+    end
+    local function ActivateHackKeyPad()
+        pcall(function()
+            repeat
+                local hackKeyPad = getHackKeyPad()
+                if hackKeyPad then
+                    ChooseTeleport(hackKeyPad)
+                    local hackKeyPadEvent = getevent(hackKeyPad)
+                    if hackKeyPadEvent then
+                        for i = 1, 5 do hackKeyPadEvent:FireServer() end
+                        task.wait(WAIT_AFTER_EVENT)
+                    else
+                        warn(string.format("ActivateHackKeyPad: RemoteEvent non trouvé pour le KeyPad '%s'.", hackKeyPad and hackKeyPad.Name or "nil"))
+                        break
+                    end
+                else
+                    task.wait(0.5)
+                end
+                ClubStatus = CheckHeistStatus("Club")
+                if ClubStatus.Locked then break end
+            until getHackKeyPad() == nil or ClubStatus.Locked
+        end)
+    end
+    ActivateHackKeyPad()
+    task.wait(1)
 
     -- Fonction pour trouver et voler les objets du club.
     local function getClubStealable(): Instance
