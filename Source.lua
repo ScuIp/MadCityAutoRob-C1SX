@@ -963,7 +963,7 @@ local oldKickFunction -- Variable pour stocker l'ancienne fonction Kick hookée 
 -- Tente de hooker directement la fonction Kick si hookfunction est disponible.
 -- Cela remplace la fonction Kick de LocalPlayer par une fonction vide.
 if hookfunction then
-    oldKickFunction = hookfunction(LocalPlayer.Kick, function()
+    oldKickFunction = hookfunction(LocalPlayer:Kick, function()
         print("Clien tried to kick")
         serverHops[serverhoptype]()
     end)
