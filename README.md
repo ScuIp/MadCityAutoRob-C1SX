@@ -15,7 +15,7 @@
     getgenv().Pyramid = true                 -- Enable/disable Pyramid robbery
     getgenv().Metro = true                   -- Enable/disable Metro (train) robbery
 
-    loadstring(game:HttpGet("[https://raw.githubusercontent.com/ScuIp/MadCityAutoRob-C1SX/refs/heads/main/Source.lua](https://raw.githubusercontent.com/ScuIp/MadCityAutoRob-C1SX/refs/heads/main/Source.lua)"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ScuIp/MadCityAutoRob-C1SX/refs/heads/main/Source.lua"))()
     ```
 
 
