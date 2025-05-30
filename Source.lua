@@ -962,7 +962,12 @@ local oldKickFunction -- Variable pour stocker l'ancienne fonction Kick hookée 
 
 -- Tente de hooker directement la fonction Kick si hookfunction est disponible.
 -- Cela remplace la fonction Kick de LocalPlayer par une fonction vide.
-
+if hookfunction then
+	oldKickFunction = hookfunction(LocalPlayer.Kick, function()
+        print("Clien tried to kick")
+        serverHops[serverhoptype]()
+     end)
+end
 
 -- Hooke le metamethod __index du 'game' object.
 -- Le metamethod __index est appelé lorsque l'on tente d'accéder à une propriété non existante.
